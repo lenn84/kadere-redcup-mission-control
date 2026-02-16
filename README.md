@@ -6,26 +6,26 @@
 
 ```mermaid
 graph TD
-    %% The Hub
-    subgraph "LXC 1002: App Node"
-        KAD[🕹️ Kadere Dashboard]
-        SOCK[🐳 Docker Socket]
-        AUDIT[💾 Audit Log]
+
+    %% Hub
+    subgraph LXC_1002_App_Node
+        KAD[Kadere Dashboard]
+        SOCK[Docker Socket]
+        AUDIT[Audit Log]
     end
 
-    %% The Spokes
-    VPS[☁️ VPS Relay]
-    DB[🔒 LXC 1001: The Vault]
-    SEC[🛡️ CrowdSec]
+    %% Spokes
+    VPS[VPS Relay]
+    DB[LXC 1001 The Vault]
+    SEC[CrowdSec]
 
     %% Connections
     KAD -->|Unix Socket| SOCK
-    KAD -->|SSH Encrypted Tunnel| VPS
+    KAD -->|SSH Tunnel| VPS
     KAD -->|Postgres TCP 5432| DB
-    KAD -->|SSH (ZFS Check)| DB
+    KAD -->|SSH ZFS Check| DB
     KAD -->|HTTP API| SEC
     KAD -->|Write| AUDIT
-
 
 ```
 ---
