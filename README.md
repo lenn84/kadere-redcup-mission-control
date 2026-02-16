@@ -1,6 +1,7 @@
 # 🏗️ Architecture: The "Hub & Spoke" Model
--Kadere is a specialized Flask application acting as a Federated Observer.
--Unlike traditional monitoring tools that require agents installed on every server, Kadere is Agentless. It runs on the App Node (LXC 1002) but reaches out to monitor the entire infrastructure using native protocols (SSH, SQL, Unix Sockets).
+
+- Kadere is a specialized Flask application acting as a Federated Observer.
+- Unlike traditional monitoring tools that require agents installed on every server, Kadere is Agentless. It runs on the App Node (LXC 1002) but reaches out to monitor the entire infrastructure using native protocols (SSH, SQL, Unix Sockets).
 ---
 
 ```mermaid
